@@ -1,0 +1,50 @@
+id: dlg_ch04_camera_anomaly_sample
+entryNode: n01
+nodes:
+  n01:
+    speaker: npc_lab_colleague
+    text: "你又检查了一遍相机？"
+    choices:
+      - id: c_ask
+        text: "不是相机。我想把两组原始数据再对一次。"
+        conditions: []
+        effects:
+          - kind: quest_event
+            event: ch04.raw_data_compare_requested
+        next: n02
+      - id: c_hide
+        text: "可能只是我太累了。先别告诉别人。"
+        conditions: []
+        effects:
+          - kind: adjust_relationship
+            npcId: npc_lab_colleague
+            dimension: trust
+            amount: -2
+        next: n03
+  n02:
+    speaker: npc_lab_colleague
+    text: "好。我们从最普通的解释开始，一个一个排除。"
+    choices:
+      - id: c_analyze
+        text: "先看时间戳，再看传感器漂移。"
+        conditions:
+          - kind: skill_at_least
+            skillId: skill_scientist_experimental_design
+            value: 1
+        effects:
+          - kind: add_codex
+            codexId: codex_science_falsifiability
+        next: end
+  n03:
+    speaker: npc_lab_colleague
+    text: "你今天已经第三次这么说了。回去休息，或者告诉我到底发生了什么。"
+    choices:
+      - id: c_return
+        text: "给我十分钟。我从第一条记录讲。"
+        conditions: []
+        effects:
+          - kind: adjust_relationship
+            npcId: npc_lab_colleague
+            dimension: familiarity
+            amount: 2
+        next: end

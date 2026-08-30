@@ -1,0 +1,8 @@
+{
+  "project": "Project Trisolaris Chronicle",
+  "packageVersion": "1.0.0",
+  "purpose": "Design + SDD/TDD + CodingAgent execution package",
+  "primaryEntry": "START_HERE.md",
+  "agentEntry": "AGENTS.md",
+  "executionEntry": "execution/MASTER_EXECUTION_ORDER.md"
+}

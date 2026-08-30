@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "gameVersion": "0.1.0-dev",
+  "contentVersion": "sample",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-01-01T00:10:00Z",
+  "checksum": "SAMPLE_ONLY_RECOMPUTE_IN_RUNTIME",
+  "payload": {
+    "chapterId": "ch_common_04_countdown",
+    "sceneId": "sc_ch04_lab_morning",
+    "checkpointId": "cp_after_camera_test",
+    "playtimeSeconds": 600,
+    "player": {
+      "level": 2,
+      "xp": 120,
+      "skills": ["skill_scientist_experimental_design"]
+    },
+    "storyFlags": {
+      "flag.ch04.camera_test.completed": true
+    },
+    "questState": {},
+    "relationships": {},
+    "inventory": {},
+    "archive": {},
+    "codex": {}
+  }
+}

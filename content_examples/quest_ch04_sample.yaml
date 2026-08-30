@@ -1,0 +1,25 @@
+id: q_ch04_explain_countdown
+chapterId: ch_common_04_countdown
+title: "把异常变成问题"
+initialState: available
+objectives:
+  - id: obj_camera
+    type: collect_evidence
+    required: true
+    evidenceIds:
+      - ev_camera_original
+      - ev_camera_control
+  - id: obj_compare
+    type: analyze
+    required: true
+    listensFor:
+      - ch04.raw_data_compare_requested
+  - id: obj_talk
+    type: talk
+    required: true
+    npcId: npc_lab_colleague
+resolution:
+  onAllRequiredComplete: resolved_success
+journal:
+  start: "先证明这不是最普通的设备故障。"
+  complete: "可解释的故障越来越少，而问题本身变得更清楚。"

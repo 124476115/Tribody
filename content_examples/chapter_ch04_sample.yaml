@@ -1,0 +1,12 @@
+id: ch_common_04_countdown
+actId: act_02_countdown
+order: 4
+era: common
+titleKey: chapter.ch04.title
+playableCharacterId: pc_chen_mo
+entrySceneId: sc_ch04_lab_morning
+assetPack: pack_ch04
+prerequisites:
+  - flag.ch03.intro.completed
+canonAnchors:
+  - anchor.modern_science_crisis
