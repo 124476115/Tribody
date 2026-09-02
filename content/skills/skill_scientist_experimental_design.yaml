@@ -1,0 +1,4 @@
+id: skill_scientist_experimental_design
+tree: scientist
+nameKey: skill.scientist.experimental_design.name
+descriptionKey: skill.scientist.experimental_design.description

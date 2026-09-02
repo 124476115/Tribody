@@ -27,6 +27,7 @@ Example:
 # 2. Dialogue Runtime
 
 Dialogue Node:
+
 - id
 - speaker
 - portraitState
@@ -39,6 +40,7 @@ Dialogue Node:
 - cinematicCue?
 
 Choice:
+
 - id
 - text
 - conditions[]
@@ -48,6 +50,7 @@ Choice:
 - toneTag
 
 Conditions 只允许声明式：
+
 - flag
 - quest
 - relationship threshold
@@ -57,6 +60,7 @@ Conditions 只允许声明式：
 - chapter state
 
 Effects 只允许白名单 command：
+
 - set_flag
 - adjust_relationship
 - add_item
@@ -75,6 +79,7 @@ Effects 只允许白名单 command：
 
 Quest engine 事件驱动。
 Domain event examples:
+
 - `scene.entered`
 - `npc.talked`
 - `evidence.collected`
@@ -87,6 +92,7 @@ Domain event examples:
 Quest definition 监听事件并推进 Objective。
 
 要求：
+
 - deterministic
 - replay-safe
 - idempotent when processing duplicated events
@@ -102,16 +108,18 @@ Quest definition 监听事件并推进 Objective。
 `score = attribute + skill + evidenceBonus + relationshipBonus + situationalModifier`
 
 三档：
+
 - clear success
 - costly success
 - failure with consequence
 
 关键科学事实不能因随机失败永久锁死。
 技能不足时：
+
 - 获得更少上下文
 - 需要额外步骤
 - 产生代价
-而非永远失去主线。
+  而非永远失去主线。
 
 ---
 
@@ -121,6 +129,7 @@ Quest definition 监听事件并推进 Objective。
 `Question → Observable → Model → Manipulation → Prediction → Feedback → Reflection`
 
 Example: signal anomaly
+
 - Question: 是设备噪声、环境干扰还是外部规律？
 - Observable: 多组日志
 - Model: candidate hypotheses
@@ -136,6 +145,7 @@ Example: signal anomaly
 # 6. Codex
 
 分类：
+
 - People
 - Organization
 - Science
@@ -146,6 +156,7 @@ Example: signal anomaly
 - Archive Fragments
 
 Codex entry 有：
+
 - `spoilerTier`
 - `unlockedAt`
 - `short`
@@ -161,6 +172,7 @@ Codex entry 有：
 # 7. Audio system
 
 Channels:
+
 - master
 - music
 - ambience
@@ -169,6 +181,7 @@ Channels:
 - ui
 
 Features:
+
 - scene ambience layers
 - dynamic music state
 - dialogue voice cues
@@ -184,11 +197,13 @@ Audio cue IDs 由内容数据引用，禁止直接文件路径散落在剧情。
 # 8. Cinematic system
 
 三种层级：
+
 1. In-engine camera
 2. Illustrated motion panel
 3. Full-screen timeline montage
 
 Cinematic cue 声明式：
+
 - camera target
 - duration
 - fade
@@ -205,34 +220,40 @@ Cinematic cue 声明式：
 # 9. Era visual language
 
 ## Red Coast
+
 - constrained palettes
 - paper / analog instruments
 - snow, forest, concrete, radio hardware
 - deliberate camera
 
 ## Modern crisis
+
 - laboratories
 - urban night
 - digital cameras / screens
 - subtle intrusion effects
 
 ## Crisis Era
+
 - clean large-scale future urbanism
 - public confidence vs hidden fragility
 - military UI
 
 ## Deterrence
+
 - cultural flourish
 - smooth interfaces
 - normalized prosperity
 - underlying system tension
 
 ## Bunker
+
 - enclosed monumental habitats
 - artificial skies
 - dense layered infrastructure
 
 ## Galaxy / Beyond
+
 - sparse UI
 - silence
 - vast negative space
@@ -243,6 +264,7 @@ Cinematic cue 声明式：
 # 10. Content budget per main chapter
 
 Target:
+
 - 3–6 exploration scenes
 - 2–4 major dialogue scenes
 - 1 system challenge

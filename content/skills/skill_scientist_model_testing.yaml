@@ -1,0 +1,4 @@
+id: skill_scientist_model_testing
+tree: scientist
+nameKey: skill.scientist.model_testing.name
+descriptionKey: skill.scientist.model_testing.description

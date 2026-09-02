@@ -1,0 +1,4 @@
+id: skill_operator_navigation
+tree: operator
+nameKey: skill.operator.navigation.name
+descriptionKey: skill.operator.navigation.description

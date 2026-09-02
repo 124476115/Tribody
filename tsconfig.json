@@ -45,6 +45,7 @@
       "@game/*": ["src/game/*"],
       "@ui/*": ["src/ui/*"],
       "@bootstrap/*": ["src/bootstrap/*"],
+      "@dev/*": ["src/dev/*"],
       "@tests/*": ["tests/*"]
     },
     
@@ -55,7 +56,10 @@
   },
   "include": [
     "src/**/*",
+    "schemas/**/*",
     "tests/**/*",
+    "tools/**/*",
+    "vitest.config.ts",
     "vite.config.ts"
   ],
   "exclude": [

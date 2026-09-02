@@ -129,7 +129,7 @@ function main() {
   );
 
   expectFail(
-    'validate:content fails on authored content (WO-010 pending)',
+    'validate:content fails on authored content (WO-010 content schema)',
     'validate:content',
     PROBE_CONTENT_FILE,
     '{\n  "probe": true\n}\n'

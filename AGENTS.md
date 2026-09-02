@@ -80,6 +80,7 @@
 - Skill: `skill_<tree>_<slug>`
 - Medal: `medal_<slug>`
 - Codex: `codex_<category>_<slug>`
+- Audio cue: `cue_<category>_<slug>`
 
 ID 永久稳定；发布后禁止无迁移重命名。
 

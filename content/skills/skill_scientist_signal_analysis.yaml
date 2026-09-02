@@ -1,0 +1,4 @@
+id: skill_scientist_signal_analysis
+tree: scientist
+nameKey: skill.scientist.signal_analysis.name
+descriptionKey: skill.scientist.signal_analysis.description

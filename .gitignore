@@ -6,6 +6,9 @@ dist/
 build/
 .vite/
 
+# Generated content pipeline output
+content/generated/
+
 # Test outputs
 coverage/
 test-results/

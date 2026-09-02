@@ -1,0 +1,4 @@
+id: skill_operator_repair
+tree: operator
+nameKey: skill.operator.repair.name
+descriptionKey: skill.operator.repair.description

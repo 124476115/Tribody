@@ -1,0 +1,4 @@
+id: skill_investigator_pattern_recognition
+tree: investigator
+nameKey: skill.investigator.pattern_recognition.name
+descriptionKey: skill.investigator.pattern_recognition.description

@@ -5,6 +5,7 @@
 Per era playable character: 1–20.
 
 Recommended pacing:
+
 - start: 1
 - end of introductory chapter: 3–4
 - act midpoint: 8–11
@@ -16,6 +17,7 @@ Level is a pacing tool, not a grind target.
 # XP source weights
 
 Guideline:
+
 - main quest milestone: high
 - side quest: medium
 - scientific insight: medium
@@ -37,6 +39,7 @@ Player should specialize enough to see distinct dialogue solutions while still f
 Do not store invisible arbitrary difficulty all over content.
 
 Difficulty tiers:
+
 - Routine
 - Trained
 - Expert
@@ -49,6 +52,7 @@ Costly success band should be broad enough that under-specialized players still 
 # Inventory philosophy
 
 Inventory should remain small and legible:
+
 - 8–16 meaningful carried items typical
 - quest evidence stored in Investigation Board, not backpack clutter
 - no trash loot
@@ -57,8 +61,9 @@ Inventory should remain small and legible:
 # Relationship tuning
 
 Normal scene changes:
+
 - trust/respect ±1 to ±5
-Major promise/betrayal:
+  Major promise/betrayal:
 - ±8 to ±20
 
 Avoid one conversation jumping from stranger to soulmate.
@@ -67,6 +72,7 @@ Avoid one conversation jumping from stranger to soulmate.
 
 Crisis chapters are not about “winning” the macro event.
 Metrics:
+
 - people assisted
 - system integrity
 - archive integrity
@@ -78,15 +84,18 @@ Use multi-objective pressure so no perfect solution is obvious.
 # Difficulty modes
 
 Story:
+
 - stronger hints
 - no forced timed dialogue
 - forgiving crisis resource rate
 - skill checks more often produce costly success
 
 Standard:
+
 - intended experience
 
 Analyst:
+
 - fewer hints
 - tighter resource/information pressure
 - scientific tasks require one extra validation step

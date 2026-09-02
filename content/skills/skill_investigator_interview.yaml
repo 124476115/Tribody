@@ -1,0 +1,4 @@
+id: skill_investigator_interview
+tree: investigator
+nameKey: skill.investigator.interview.name
+descriptionKey: skill.investigator.interview.description

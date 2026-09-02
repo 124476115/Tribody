@@ -83,10 +83,12 @@ effect:
 Effect processor must reject any content command matching protected namespace unless initiated by `CanonAnchorService`.
 
 Protected examples:
+
 - `canon.*`
 - `era.transition.*`
 
 Normal dialogue cannot:
+
 ```yaml
 set_flag: canon.droplet.defeated
 ```
@@ -105,6 +107,7 @@ During prototype, text inline is allowed only inside `content_examples/`, never 
 # Schema versioning
 
 Content manifest has:
+
 - schemaVersion
 - contentVersion
 - generatedAt

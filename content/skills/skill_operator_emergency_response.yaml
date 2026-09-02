@@ -1,0 +1,4 @@
+id: skill_operator_emergency_response
+tree: operator
+nameKey: skill.operator.emergency_response.name
+descriptionKey: skill.operator.emergency_response.description

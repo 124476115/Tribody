@@ -1,0 +1,6 @@
+item.document_log.name: "观测日志"
+item.document_log.description: "两组原始数据的打印件。"
+item.tool.relay_scanner.name: "中继扫描仪"
+item.tool.relay_scanner.description: "手持式信号中继扫描装置，可在观测站内部用于校准与转接。"
+item.consumable.notch.name: "能量槽片"
+item.consumable.notch.description: "廉价的一次性供能单元，多用于临时设备。"

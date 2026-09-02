@@ -3,6 +3,7 @@
 # Screen layout
 
 Exploration:
+
 - Phaser canvas full viewport
 - React HUD overlay
 - top-left: current objective (collapsible)
@@ -11,6 +12,7 @@ Exploration:
 - no permanent minimap in intimate scenes; optional in larger spaces
 
 Dialogue:
+
 - character portrait or in-scene focus
 - speaker
 - text
@@ -21,6 +23,7 @@ Dialogue:
 - voice replay
 
 Menus:
+
 - Journal
 - Character
 - Skills
@@ -34,6 +37,7 @@ Menus:
 # Visual hierarchy
 
 Important:
+
 - scene first
 - characters second
 - text third
@@ -44,6 +48,7 @@ Important:
 # Accessibility
 
 Required:
+
 - font size 100/125/150%
 - line spacing option
 - dyslexia-friendly fallback font option
@@ -66,6 +71,7 @@ Required:
 # Localization
 
 Content architecture must support:
+
 - zh-CN first
 - en second-ready
 
@@ -76,6 +82,7 @@ Dialogue data uses localization keys in production, not text hardcoded in code.
 # Audio direction
 
 Music should emphasize:
+
 - texture
 - distance
 - pressure
@@ -84,11 +91,13 @@ Music should emphasize:
 Avoid constant “epic sci-fi” music.
 
 Use silence deliberately:
+
 - before/after major cosmic events
 - in observatory sequences
 - in archive moments
 
 Voice:
+
 - full voice is optional by budget
 - architecture supports partial voice
 - minimum: key character lines + cinematics
@@ -106,6 +115,7 @@ Voice:
 # Performance targets
 
 Engineering targets:
+
 - 60 FPS desktop target
 - graceful 30 FPS fallback on low-end integrated graphics
 - no long main-thread blocking while loading chapter content

@@ -5,6 +5,7 @@
 `Explore → Talk → Investigate → Decide → Resolve Conflict → Grow → Archive → Advance Era`
 
 ## Exploration
+
 - tile/map navigation
 - interactable hotspots
 - contextual actions
@@ -13,6 +14,7 @@
 - optional NPC conversations
 
 ## Dialogue
+
 - portrait + scene context
 - choices
 - skill checks
@@ -21,7 +23,9 @@
 - timed choices only in high-pressure scenes; default untimed for accessibility
 
 ## Investigation Board
+
 玩家收集：
+
 - Evidence
 - Hypothesis
 - Person
@@ -34,13 +38,16 @@
 ## Conflict modes
 
 ### 1. Social Conflict
+
 资源：
+
 - Composure
 - Leverage
 - Trust
 - Evidence
 
 动作：
+
 - Ask
 - Press
 - Reframe
@@ -49,18 +56,23 @@
 - Commit
 
 ### 2. Scientific Challenge
+
 资源：
+
 - data sets
 - parameters
 - instruments
 - time budget
 
 胜利条件：
+
 - 提出通过最低证据阈值的可证伪解释
 - 或正确识别“现有理论无法解释”
 
 ### 3. Field Crisis
+
 半实时/暂停制：
+
 - Move
 - Interact
 - Assist
@@ -72,7 +84,9 @@
 避免以击杀为主。
 
 ### 4. Tactical Command
+
 用于舰队/大型系统：
+
 - command map
 - limited orders
 - information delay
@@ -89,6 +103,7 @@
 
 角色每个时代独立等级，建议 1–20。
 经验来源：
+
 - Main quest
 - Side quest
 - Discovery
@@ -101,6 +116,7 @@
 ## Attributes
 
 六属性，1–10：
+
 - Insight 洞察
 - Reason 推理
 - Resolve 定力
@@ -113,30 +129,35 @@
 ## Skill trees
 
 ### Investigator
+
 - Pattern Recognition
 - Interview
 - Surveillance Awareness
 - Evidence Reconstruction
 
 ### Scientist
+
 - Experimental Design
 - Signal Analysis
 - Model Testing
 - Cosmology Literacy
 
 ### Operator
+
 - Repair
 - Emergency Response
 - EVA
 - Navigation
 
 ### Strategist
+
 - Risk Analysis
 - Resource Command
 - Deception Detection
 - Long Horizon
 
 ### Humanist
+
 - De-escalation
 - Empathy
 - Cultural Memory
@@ -149,6 +170,7 @@
 # Equipment
 
 装备槽：
+
 - Tool
 - Device
 - Clothing/Suit
@@ -156,6 +178,7 @@
 - Keepsake
 
 示例：
+
 - Field notebook
 - Spectral sensor
 - Secure terminal
@@ -176,16 +199,20 @@ Keepsake 可提供对话/稳定性效果，强调人与历史。
 勋章分三类：
 
 ### Mastery
+
 - Scientific Method
 - Crisis Operator
 - Archive Keeper
 
 ### Discovery
+
 - 找到完整时代档案
 - 发现跨时代支线回响
 
 ### Values
+
 不叫“道德成就”，而叫“观点印记”：
+
 - Preserve the Few
 - Preserve the Record
 - Radical Transparency
@@ -199,6 +226,7 @@ Keepsake 可提供对话/稳定性效果，强调人与历史。
 # Relationship system
 
 每 NPC 保存多维关系：
+
 - trust
 - respect
 - familiarity
@@ -207,11 +235,12 @@ Keepsake 可提供对话/稳定性效果，强调人与历史。
 
 范围建议 -100..100，但 UI 不直接显示数字。
 显示语言：
+
 - guarded
 - open
 - relies on you
 - disagrees but respects you
-等。
+  等。
 
 经典人物关系值不允许改变其 Hard Canon 行为。
 
@@ -223,6 +252,7 @@ Quest states:
 `locked → available → active → blocked(optional) → resolved_success/resolved_costly/resolved_failure → archived`
 
 Quest Objective 类型：
+
 - go_to
 - interact
 - collect_evidence
@@ -236,6 +266,7 @@ Quest Objective 类型：
 - custom_domain_event
 
 每个主线 Quest 必须：
+
 - 至少 1 个显式目标
 - 提供 journal summary
 - 可恢复
@@ -249,6 +280,7 @@ Quest Objective 类型：
 不做传统金币驱动。
 
 不同年代使用不同“资源语境”：
+
 - supply credit
 - project budget
 - access authorization
@@ -257,17 +289,19 @@ Quest Objective 类型：
 - fabrication allowance
 
 商店/补给系统主要支持：
+
 - 可选工具
 - 消耗品
 - 外观
 - 生活物件
-而不是无止境数值膨胀。
+  而不是无止境数值膨胀。
 
 ---
 
 # Failure design
 
 失败优先转化为：
+
 - lost trust
 - extra resource cost
 - missing optional evidence
@@ -276,6 +310,7 @@ Quest Objective 类型：
 - alternate scene
 
 只有以下情况 Game Over：
+
 - 明确死亡危险且无合理叙事恢复
 - 核心任务完全失败且世界逻辑不允许继续
 
@@ -286,11 +321,13 @@ Game Over 前至少有清晰预警和最近 autosave。
 # Difficulty
 
 Modes:
+
 - Story
 - Standard
 - Analyst
 
 区别：
+
 - 线索提示
 - 时间压力
 - 冲突容错
@@ -303,12 +340,14 @@ Modes:
 # New Game+
 
 保留：
+
 - Codex
 - Medals
 - Timeline annotations
 - Optional meta commentary unlock
 
 不保留：
+
 - 大部分时代角色等级
 - 主线关键道具
 - 会破坏剧情认知顺序的证据
@@ -318,11 +357,13 @@ Modes:
 # Save system UX
 
 Slots:
+
 - 3 manual
 - rotating autosaves 5
 - quick save 1 (non-cinematic only)
 
 Save metadata:
+
 - version
 - chapter
 - scene
@@ -333,6 +374,7 @@ Save metadata:
 - content manifest version
 
 支持：
+
 - export JSON
 - import JSON
 - integrity validation

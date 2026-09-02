@@ -4,6 +4,9 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  // Relative asset base so the built site works when served from any
+  // sub-path (e.g. /3t/ via a web root symlink), not only from root.
+  base: './',
   resolve: {
     alias: {
       '@domain': path.resolve(__dirname, './src/domain'),
@@ -12,6 +15,7 @@ export default defineConfig({
       '@game': path.resolve(__dirname, './src/game'),
       '@ui': path.resolve(__dirname, './src/ui'),
       '@bootstrap': path.resolve(__dirname, './src/bootstrap'),
+      '@dev': path.resolve(__dirname, './src/dev'),
       '@tests': path.resolve(__dirname, './tests'),
     },
   },

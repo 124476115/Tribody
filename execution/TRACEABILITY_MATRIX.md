@@ -2,21 +2,22 @@
 
 Agent maintains this file after each Gate.
 
-| Requirement | Spec | Unit | Integration | E2E | Gate |
-|---|---|---|---|---|---|
-| Browser boot | WO-000 | smoke | — | boot | G0 |
-| Typed event kernel | FS-EVENTS-001 | `tests/unit/events/*.test.ts` (serialization, ids, duplicates, unknown-events, sequence, determinism, transactional, commands) | `tests/integration/events-roundtrip.test.ts` | — | G0 |
-| Data-driven dialogue | FS-DIALOGUE-001 | required | required | conversation | G1 |
-| Quest progression | FS-QUEST-001 | required | required | quest path | G1 |
-| Save/load | FS-SAVE-001 | required | required | reload | G1 |
-| Exploration interaction | FS-EXPLORE-001 | small | required | move/interact | G1 |
-| XP/levels | FS-PROG-001 | required | required | progression | G2 |
-| Skills/checks | FS-SKILL-001 | required | dialogue integration | skill choice | G2 |
-| Equipment | FS-INV-001 | required | required | equip | G2 |
-| Relationships | FS-REL-001 | required | dialogue | consequence | G2 |
-| Audio | FS-AUDIO-001 | adapters | scene integration | settings smoke | G3 |
-| Cinematic skip invariant | FS-CINE-001 | required | required | skip | G3 |
-| Accessibility | FS-A11Y-001 | selected | UI integration | keyboard | G3 |
-| Vertical slice | chapter specs | all relevant | all relevant | golden path | G4 |
+| Requirement                 | Spec            | Unit                                                                                                                                                           | Integration                                     | E2E                           | Gate |
+| --------------------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------- | ---- |
+| Browser boot                | WO-000          | smoke                                                                                                                                                          | —                                               | boot                          | G0   |
+| Content schema + validation | FS-CONTENT-001  | `tests/unit/content/*.test.ts` (9 files: ids, guards, parse, refintegrity, dialogue-graph, conditions-effects, quest, localization, manifest, domain-purity)   | `tests/integration/content-pipeline.test.ts`    | —                             | G1   |
+| Typed event kernel          | FS-EVENTS-001   | `tests/unit/events/*.test.ts` (9 files: serialization, ids, duplicates, unknown-events, sequence, determinism, transactional, commands, save-slot WO-013 seam) | `tests/integration/events-roundtrip.test.ts`    | —                             | G0   |
+| Data-driven dialogue        | FS-DIALOGUE-001 | `tests/unit/dialogue/*.test.ts` (7 files: runtime, conditions, effects, serialization, determinism, purity, helpers)                                           | `tests/integration/dialogue-runtime.test.ts`    | conversation                  | G1   |
+| Quest progression           | FS-QUEST-001    | `tests/unit/quest/*.test.ts` (11 files: init, lifecycle, matching, events, idempotency, resolution, serialization, determinism, journal, malformed, purity)    | `tests/integration/quest-runtime.test.ts`       | quest path                    | G1   |
+| Save/load                   | FS-SAVE-001     | `tests/unit/save/*.test.ts` (13 files: canonical, guards, migrations, pipeline, content-compat, size, errors, purity, save-service, import-export, schema-v2, schema-v3, schema-v4) | `tests/integration/save-roundtrip.test.ts`      | reload                        | G1   |
+| Exploration interaction     | FS-EXPLORE-001  | `tests/unit/exploration/exploration-runtime.test.ts` (21 tests)                                                                                                | `tests/integration/exploration-runtime.test.ts` | move/interact (WO-030 Phaser) | G1   |
+| XP/levels                   | FS-PROG-001     | `tests/unit/progression/*.test.ts` (8 files: runtime, boundaries, multilevel, independence, archive, event-emission, errors) + `tests/unit/save/schema-v3.test.ts` | `tests/integration/progression-runtime.test.ts` | progression (WO-030) | G2   |
+| Skills/checks               | FS-SKILL-001    | `tests/unit/skills/*.test.ts` (4 files: roll, catalog, learn, check) + `tests/unit/save/schema-v4.test.ts` + `tests/unit/content/manifest.test.ts` (catalog-completeness) | `tests/integration/skills-runtime.test.ts`                 | skill choice                  | G2   |
+| Equipment                   | FS-INV-001      | `tests/unit/inventory/{inventory-domain,equip,purity}.test.ts` + `tests/unit/save/schema-v5.test.ts` + `tests/unit/save/content-compat.test.ts` (inventory section) | `tests/integration/inventory-runtime.test.ts` | reload (hydration via dev harness) | G2   |
+| Relationships               | FS-REL-001      | required                                                                                                                                                       | dialogue                                        | consequence                   | G2   |
+| Audio                       | FS-AUDIO-001    | adapters                                                                                                                                                       | scene integration                               | settings smoke                | G3   |
+| Cinematic skip invariant    | FS-CINE-001     | required                                                                                                                                                       | required                                        | skip                          | G3   |
+| Accessibility               | FS-A11Y-001     | selected                                                                                                                                                       | UI integration                                  | keyboard                      | G3   |
+| Vertical slice              | chapter specs   | all relevant                                                                                                                                                   | all relevant                                    | golden path                   | G4   |
 
 Do not mark a cell complete without pointing to actual test file in the implementation repo.

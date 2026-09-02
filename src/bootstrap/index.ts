@@ -14,6 +14,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createGame } from '@game/config';
 import { App } from '@ui/App';
+import { installDevSaveHarness } from '@dev/harness';
 
 /**
  * Initialize the game application.
@@ -43,6 +44,7 @@ export function initializeGame(): void {
   // Store game instance for debugging (development only)
   if (import.meta.env.DEV) {
     (window as unknown as { __GAME__: typeof game }).__GAME__ = game;
+    installDevSaveHarness();
   }
 }
 

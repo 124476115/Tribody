@@ -1,0 +1,6 @@
+id: item_consumable_notch
+category: consumable
+nameKey: item.consumable.notch.name
+descriptionKey: item.consumable.notch.description
+stackable: true
+questProtected: false

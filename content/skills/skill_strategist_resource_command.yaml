@@ -1,0 +1,4 @@
+id: skill_strategist_resource_command
+tree: strategist
+nameKey: skill.strategist.resource_command.name
+descriptionKey: skill.strategist.resource_command.description

@@ -40,6 +40,7 @@ Agent may cover engineering/doc tasks; it should not silently replace rights, sc
 # Asset pipeline
 
 Each asset has metadata:
+
 - id
 - owner/license
 - source
@@ -67,6 +68,7 @@ No file enters Release Candidate without rights metadata.
 Do not ask only “好玩吗？”
 
 Ask:
+
 - What do you think just happened?
 - Why did NPC X make that choice?
 - What scientific idea did you infer?

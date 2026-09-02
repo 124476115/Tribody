@@ -1,0 +1,4 @@
+id: skill_investigator_evidence_reconstruction
+tree: investigator
+nameKey: skill.investigator.evidence_reconstruction.name
+descriptionKey: skill.investigator.evidence_reconstruction.description

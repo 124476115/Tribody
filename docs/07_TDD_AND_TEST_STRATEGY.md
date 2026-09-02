@@ -11,7 +11,9 @@ Cycle:
 # Test pyramid
 
 ## Unit — largest
+
 Targets:
+
 - skill checks
 - XP/levels
 - inventory
@@ -24,13 +26,16 @@ Targets:
 - medal criteria
 
 Characteristics:
+
 - no browser
 - no Phaser
 - deterministic
 - fast
 
 ## Integration
+
 Targets:
+
 - content loader + schema
 - dialogue + quest event
 - scene command + checkpoint save
@@ -39,7 +44,9 @@ Targets:
 - imported save validation
 
 ## E2E
+
 Critical paths only:
+
 - boot
 - new game
 - move
@@ -57,11 +64,13 @@ Critical paths only:
 # Mandatory test categories
 
 ### Narrative invariants
+
 - Hard Canon flags cannot be unset by normal choice effects.
 - Choice may affect Tier C state but not illegal Tier A outcome.
 - Mandatory scene remains reachable.
 
 ### Save
+
 - round trip
 - old fixture migration
 - corrupted checksum
@@ -71,6 +80,7 @@ Critical paths only:
 - autosave rotation
 
 ### Dialogue
+
 - condition true/false
 - no infinite auto-next loop
 - no dangling node
@@ -79,12 +89,14 @@ Critical paths only:
 - localization key present
 
 ### Quest
+
 - duplicate domain event idempotency
 - out-of-order optional event
 - resume from save
 - no soft lock at required objective
 
 ### Browser
+
 - resize
 - tab hide/show
 - audio context resume after user gesture
@@ -95,6 +107,7 @@ Critical paths only:
 # Visual regression
 
 Use Playwright screenshots only for stable UI surfaces:
+
 - dialogue
 - journal
 - inventory
@@ -113,10 +126,12 @@ Example:
 # Acceptance criteria traceability
 
 Feature Spec:
+
 - AC-01...
 - AC-02...
 
 Tests include IDs:
+
 ```ts
 describe("FS-DIALOGUE-001", () => {
   it("AC-03 ...", ...)
@@ -126,6 +141,7 @@ describe("FS-DIALOGUE-001", () => {
 # Property-like tests
 
 Useful areas:
+
 - save migration preserves invariant IDs
 - XP never decreases from award action
 - inventory count never below zero
@@ -135,6 +151,7 @@ Useful areas:
 # Content validation tests
 
 Content is code-like and must fail CI on:
+
 - duplicate IDs
 - broken refs
 - empty required dialogue
@@ -145,11 +162,13 @@ Content is code-like and must fail CI on:
 # Quality command
 
 Agent should implement:
+
 ```bash
 npm run quality
 ```
 
 Equivalent pipeline:
+
 1. format check
 2. lint
 3. typecheck
@@ -164,6 +183,7 @@ E2E may be separate in early local loop but required at Work Order gates:
 # Bug workflow
 
 Every confirmed bug:
+
 1. add failing regression test
 2. fix
 3. retain test permanently unless architecture removed

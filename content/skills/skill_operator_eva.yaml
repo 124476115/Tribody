@@ -1,0 +1,4 @@
+id: skill_operator_eva
+tree: operator
+nameKey: skill.operator.eva.name
+descriptionKey: skill.operator.eva.description

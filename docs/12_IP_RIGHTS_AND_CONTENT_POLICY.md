@@ -34,6 +34,7 @@ with rights record.
 # Rights manifest
 
 Before RC, every asset should resolve to:
+
 - Original
 - Commissioned with license
 - Third-party licensed

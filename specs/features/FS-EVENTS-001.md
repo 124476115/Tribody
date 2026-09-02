@@ -1,19 +1,20 @@
 # FS-EVENTS-001 — Typed Domain Event Kernel
 
 ## Status
+
 Implemented
 
 ## Problem
 
-Dialogue, quest, inventory, and progression systems all need to record *things
-that happened* (an NPC was spoken to, a choice was selected, an item was
+Dialogue, quest, inventory, and progression systems all need to record _things
+that happened_ (an NPC was spoken to, a choice was selected, an item was
 equipped) in a shape that is:
 
 - typed at compile time, so the reducer/observers know the payload contract;
 - serializable, so events can cross subsystem / checkpoint / debug boundaries;
 - verifiable, so a malformed or forged event cannot corrupt domain state;
-- ordered, so state transitions are deterministic and replayable *within a
-  session* without depending on wall-clock time.
+- ordered, so state transitions are deterministic and replayable _within a
+  session_ without depending on wall-clock time.
 
 Without a kernel, each subsystem would invent its own "event" shape, leading to
 ad-hoc validation, non-deterministic replay, and brittle save logic.
@@ -77,13 +78,13 @@ funnels into `processEvent`; users never touch raw events.
 - `Sequence` — positive integer, assigned exclusively by the processor,
   ascending from 1. Logical ordering only, no wall-clock authority.
 - `JSONValue` — structural JSON-safe value: `null | boolean | number | string
-  | JSONValue[] | { [key: string]: JSONValue }`.
+| JSONValue[] | { [key: string]: JSONValue }`.
 - `DraftEvent` — an occurred fact without `sequence` (`Omit<DomainEvent,
-  'sequence'>`). `Omit` is compile-time only; the processor re-rejects any
+'sequence'>`). `Omit` is compile-time only; the processor re-rejects any
   runtime `sequence` field on entry (runtime guard).
 - `Reducer<S>` — `(state: S, event: DomainEvent) => S`. Pure, non-mutating.
 - `EventProcessingState` — `{ seenIds: ReadonlySet<EventId>,
-  nextSequence: number }`. Immutable input; success produces a new state.
+nextSequence: number }`. Immutable input; success produces a new state.
 - `DomainEventContractError` — single error type with a `code` discriminant.
 - `GameCommand` — type-only intent shape (see `docs/16`); a command is never a
   `DomainEvent`.
@@ -119,12 +120,7 @@ export type EventType = string;
 export type Sequence = number & { readonly __brand: 'Sequence' };
 
 export type JSONValue =
-  | null
-  | boolean
-  | number
-  | string
-  | JSONValue[]
-  | { [key: string]: JSONValue };
+  null | boolean | number | string | JSONValue[] | { [key: string]: JSONValue };
 
 export interface DomainEvent<T extends EventType = EventType, P extends JSONValue = JSONValue> {
   readonly id: EventId;
@@ -135,8 +131,10 @@ export interface DomainEvent<T extends EventType = EventType, P extends JSONValu
 
 // Omit<DomainEvent, 'sequence'>; also rejected at runtime if a `sequence`
 // property is present on the object handed to the processor.
-export type DraftEvent<T extends EventType = EventType, P extends JSONValue = JSONValue> =
-  Omit<DomainEvent<T, P>, 'sequence'>;
+export type DraftEvent<T extends EventType = EventType, P extends JSONValue = JSONValue> = Omit<
+  DomainEvent<T, P>,
+  'sequence'
+>;
 
 export type Reducer<S, E extends DomainEvent = DomainEvent> = (state: S, event: E) => S;
 
@@ -193,16 +191,16 @@ concern.
 
 ## Error / failure modes
 
-| Condition | Result |
-|---|---|
-| Duplicate `EventId` | Result `{ ok: false, reason: 'duplicate-id' }`; reducer NOT invoked; no state/no sequence consumed |
-| Type not in registry | Throws `DomainEventContractError('unknown-event-type')` BEFORE reducer |
-| Malformed / missing `id` | Throws `DomainEventContractError('invalid-event-id')` |
-| Draft carries a `sequence` field | Throws `DomainEventContractError('invalid-event-shape')` |
-| Non-JSON payload | Throws `DomainEventContractError('non-json-payload')` |
-| Invalid `sequence` on a complete event | Throws `DomainEventContractError('invalid-sequence')` |
-| Reducer throws | Error propagates unchanged; id NOT consumed; sequence NOT advanced; `EventProcessingState` untouched |
-| `validateEvent` on a command-shaped value | Throws `DomainEventContractError('invalid-event-shape')` |
+| Condition                                 | Result                                                                                               |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Duplicate `EventId`                       | Result `{ ok: false, reason: 'duplicate-id' }`; reducer NOT invoked; no state/no sequence consumed   |
+| Type not in registry                      | Throws `DomainEventContractError('unknown-event-type')` BEFORE reducer                               |
+| Malformed / missing `id`                  | Throws `DomainEventContractError('invalid-event-id')`                                                |
+| Draft carries a `sequence` field          | Throws `DomainEventContractError('invalid-event-shape')`                                             |
+| Non-JSON payload                          | Throws `DomainEventContractError('non-json-payload')`                                                |
+| Invalid `sequence` on a complete event    | Throws `DomainEventContractError('invalid-sequence')`                                                |
+| Reducer throws                            | Error propagates unchanged; id NOT consumed; sequence NOT advanced; `EventProcessingState` untouched |
+| `validateEvent` on a command-shaped value | Throws `DomainEventContractError('invalid-event-shape')`                                             |
 
 Kernel guarantees vs. reducer contract:
 
@@ -288,18 +286,18 @@ or a persistent event history.
 
 ## Test plan
 
-| AC | Test type | Test |
-|---|---|---|
-| AC-01 | Unit | `tests/unit/events/serialization.test.ts` |
-| AC-02 | Unit | `tests/unit/events/serialization.test.ts` |
-| AC-03 | Unit | `tests/unit/events/ids.test.ts` |
-| AC-04 | Unit | `tests/unit/events/duplicates.test.ts` |
-| AC-05 | Unit | `tests/unit/events/unknown-events.test.ts` |
-| AC-06 | Unit | `tests/unit/events/sequence.test.ts` |
-| AC-07 | Unit | `tests/unit/events/sequence.test.ts` |
-| AC-08 | Unit | `tests/unit/events/determinism.test.ts` |
-| AC-09 | Unit | `tests/unit/events/transactional.test.ts` |
-| AC-10 | Unit | `tests/unit/events/commands.test.ts` |
+| AC    | Test type   | Test                                         |
+| ----- | ----------- | -------------------------------------------- |
+| AC-01 | Unit        | `tests/unit/events/serialization.test.ts`    |
+| AC-02 | Unit        | `tests/unit/events/serialization.test.ts`    |
+| AC-03 | Unit        | `tests/unit/events/ids.test.ts`              |
+| AC-04 | Unit        | `tests/unit/events/duplicates.test.ts`       |
+| AC-05 | Unit        | `tests/unit/events/unknown-events.test.ts`   |
+| AC-06 | Unit        | `tests/unit/events/sequence.test.ts`         |
+| AC-07 | Unit        | `tests/unit/events/sequence.test.ts`         |
+| AC-08 | Unit        | `tests/unit/events/determinism.test.ts`      |
+| AC-09 | Unit        | `tests/unit/events/transactional.test.ts`    |
+| AC-10 | Unit        | `tests/unit/events/commands.test.ts`         |
 | AC-11 | Integration | `tests/integration/events-roundtrip.test.ts` |
 
 No replay/save-hydration tests exist by design (snapshot persistence).
@@ -325,6 +323,7 @@ through the `@domain` barrel (`src/domain/index.ts`).
   or the sequence; success returns a brand-new processing state.
 
 Deviation record (refactoring within the approved plan, no scope change):
+
 - `validateEvent` and the internal draft guard detect missing required fields
   first as `invalid-event-shape` (rather than letting the value checks rule),
   so a command-shaped value is rejected with the shape code as specified.

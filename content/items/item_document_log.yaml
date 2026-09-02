@@ -1,0 +1,4 @@
+id: item_document_log
+category: document
+nameKey: item.document_log.name
+descriptionKey: item.document_log.description

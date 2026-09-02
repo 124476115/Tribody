@@ -1,0 +1,4 @@
+id: skill_humanist_group_cohesion
+tree: humanist
+nameKey: skill.humanist.group_cohesion.name
+descriptionKey: skill.humanist.group_cohesion.description

@@ -1,6 +1,7 @@
 # FS-<ID> — <Feature>
 
 ## Status
+
 Draft / Approved / Implemented
 
 ## Problem
@@ -10,9 +11,11 @@ Draft / Approved / Implemented
 ## Scope
 
 ### In
+
 - ...
 
 ### Out
+
 - ...
 
 ## User flow
@@ -42,9 +45,9 @@ Draft / Approved / Implemented
 
 ## Test plan
 
-| AC | Test type | Test |
-|---|---|---|
-| AC-01 | Unit | ... |
+| AC    | Test type | Test |
+| ----- | --------- | ---- |
+| AC-01 | Unit      | ...  |
 
 ## Implementation notes
 

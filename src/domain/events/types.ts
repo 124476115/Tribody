@@ -4,6 +4,7 @@
  * Pure TypeScript value/type contracts. The only runtime value defined here is
  * the DomainEventContractError class. No Phaser / React / browser imports.
  */
+import type { SaveSlotId } from '../save';
 
 /** Opaque occurrence identity. Kernel never generates these; callers supply them. */
 export type EventId = string & { readonly __brand: 'EventId' };
@@ -59,10 +60,11 @@ export class DomainEventContractError extends Error {
 // --- Command boundary (type-only, mirror of docs/16) -------------------------
 
 /**
- * Minimal stub for the save-slot concept. The real definition belongs to
- * WO-013 (Save System).
+ * The real save-slot identity, resolved from WO-013's Save System for WO-002's
+ * command boundary. Single source of truth: `src/domain/save` (`SaveSlotId`);
+ * there is deliberately no second definition here.
  */
-export type SaveSlot = string;
+export type SaveSlot = SaveSlotId;
 
 /**
  * Intent, not a fact. Commands request behavior; DomainEvents record something

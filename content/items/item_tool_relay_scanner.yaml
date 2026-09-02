@@ -1,0 +1,7 @@
+id: item_tool_relay_scanner
+category: tool
+nameKey: item.tool.relay_scanner.name
+descriptionKey: item.tool.relay_scanner.description
+slot: tool
+stackable: false
+questProtected: false

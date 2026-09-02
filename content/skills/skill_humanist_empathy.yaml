@@ -1,0 +1,4 @@
+id: skill_humanist_empathy
+tree: humanist
+nameKey: skill.humanist.empathy.name
+descriptionKey: skill.humanist.empathy.description
